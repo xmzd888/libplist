@@ -71,7 +71,7 @@ typedef volatile struct {
 
 static thread_once_t init_once = {0, 0};
 static thread_once_t deinit_once = {0, 0};
-
+/*
 void thread_once(thread_once_t *once_control, void (*init_routine)(void))
 {
     while (InterlockedExchange(&(once_control->lock), 1) != 0) {
@@ -98,7 +98,7 @@ BOOL WINAPI DllMain(HINSTANCE hModule, DWORD dwReason, LPVOID lpReserved)
     }
     return 1;
 }
-
+*/
 #else
 
 static pthread_once_t init_once = PTHREAD_ONCE_INIT;
